@@ -1,0 +1,9 @@
+<h3>{{title}}</h3>
+
+<div class="input-group">
+    <input type="number" class="form-control" placeholder="Recipient's username" name="progress" [(ngModel)]="progress" (ngModelChange)="onChange($event)" min="1" max="100" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+        <button class="btn btn-outline-primary" type="button" (click)="changeVal(5)"><i class="mdi mdi-plus"></i></button>
+        <button class="btn btn-outline-primary" type="button" (click)="changeVal(-5)"><i class="mdi mdi-minus"></i></button>
+    </div>
+</div>
