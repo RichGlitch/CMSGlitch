@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { element } from 'protractor';
 
 @Component({
@@ -7,6 +7,9 @@ import { element } from 'protractor';
   styles: []
 })
 export class ProgressControlComponent implements OnInit {
+
+  @ViewChild('txtProgress', { static: true }) txtProgress: ElementRef;
+
   @Input() title: string='Title';
   @Input() progress: number = 50;
   @Output() changeValue: EventEmitter<number> = new EventEmitter();
@@ -17,7 +20,7 @@ export class ProgressControlComponent implements OnInit {
   }
 
   onChange(newValue : number){
-    let elemHTML = document.getElementsByName('progress')[0];
+   // let elemHTML = document.getElementsByName('progress')[0];
 
     if (newValue == null || newValue <= 0)
       this.progress = 0;
@@ -26,7 +29,9 @@ export class ProgressControlComponent implements OnInit {
     else
       this.progress = newValue;
   
-    elemHTML.value = this.progress;
+    //elemHTML.value = this.progress;
+
+    this.txtProgress.nativeElement.value = this.progress;
     
     this.changeValue.emit(this.progress);
   }
