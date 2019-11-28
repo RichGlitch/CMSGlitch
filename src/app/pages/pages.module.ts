@@ -12,6 +12,7 @@ import { PAGES_ROUTES } from './pages.routes';
 import { ProgressControlComponent } from '../components/progress-control/progress-control.component';
 
 import { DoughnutCharComponent } from '../components/doughnut-char/doughnut-char.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { DoughnutCharComponent } from '../components/doughnut-char/doughnut-char
         ProgressComponent,
         Graphs1Component,
         ProgressControlComponent,
-        DoughnutCharComponent
+        DoughnutCharComponent,
+        AccountSettingsComponent
     ],
     exports: [
         DashboardComponent,
